@@ -19,6 +19,17 @@ interface Employee : Entity<Employee> {
     var hireDate: LocalDate
     var salary: Long
     var department: Department
+
+    fun entity(name: String, job: String, manager: Employee?, hireDate: LocalDate, salary: Long, department: Department): Employee {
+        this.name = name
+        this.job = job
+        this.manager = manager
+        this.hireDate = hireDate
+        this.salary = salary
+        this.department = department
+
+        return this
+    }
 }
 
 object Employees : Table<Employee>("employee") {

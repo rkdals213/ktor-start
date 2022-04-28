@@ -11,7 +11,11 @@ import org.ktorm.entity.*
 object Repository {
     private val database = DatabaseConnection.database
 
-    fun findDepartmentById(id: Long): Department? = database.departments.find { it.id eq id }
+    fun findDepartmentById(id: Long): Department = database.departments.find { it.id eq id } ?: throw RuntimeException()
 
-    fun findEmployeeById(id: Long): Employee? = database.employees.find { it.id eq id }
+    fun findEmployeeById(id: Long): Employee = database.employees.find { it.id eq id } ?: throw RuntimeException()
+
+    fun saveDepartment(department: Department) = database.departments.add(department)
+
+    fun saveEmployee(employee: Employee) = database.employees.add(employee)
 }
