@@ -1,0 +1,15 @@
+package com.example.config
+
+import java.util.*
+
+object Property {
+
+    private val props = Properties().apply {
+        Property::class.java.classLoader.getResourceAsStream("application.properties").use {
+            load(it)
+        }
+    }
+
+    operator fun get(key: String): String = props[key].toString()
+
+}

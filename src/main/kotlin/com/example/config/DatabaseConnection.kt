@@ -8,10 +8,11 @@ import org.ktorm.logging.LogLevel
 
 object DatabaseConnection {
     private val config = HikariConfig().apply {
-        jdbcUrl = "jdbc:mysql://localhost:3306/ktorm"
-        driverClassName = "com.mysql.cj.jdbc.Driver"
-        username = "root"
-        password = "1234"
+        println(Property["db.jdbcUrl"])
+        jdbcUrl = Property["db.jdbcUrl"]
+        driverClassName = Property["db.driverClassName"]
+        username = Property["db.username"]
+        password = Property["db.password"]
     }
 
     private val datasource = HikariDataSource(config)
