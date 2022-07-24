@@ -1,8 +1,9 @@
 package com.example.dto
 
 import com.example.domain.Department
+import kotlinx.serialization.Serializable
 
-@kotlinx.serialization.Serializable
+@Serializable
 data class DepartmentRequest(
     var name: String,
     var location: String

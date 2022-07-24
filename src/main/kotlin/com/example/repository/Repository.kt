@@ -1,6 +1,6 @@
 package com.example.repository
 
-import com.example.config.DatabaseConnection
+import com.example.config.KtOrmDatabaseConnection
 import com.example.domain.Department
 import com.example.domain.Employee
 import com.example.domain.departments
@@ -9,7 +9,7 @@ import org.ktorm.dsl.eq
 import org.ktorm.entity.*
 
 object Repository {
-    private val database = DatabaseConnection.database
+    private val database = KtOrmDatabaseConnection.database
 
     fun findDepartmentById(id: Long): Department = database.departments.find { it.id eq id } ?: throw RuntimeException()
 

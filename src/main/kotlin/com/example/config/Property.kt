@@ -4,7 +4,7 @@ import java.util.*
 
 object Property {
 
-    private val props = Properties().apply {
+     var props = Properties().apply {
         Property::class.java.classLoader.getResourceAsStream("application.properties").use {
             load(it)
         }
