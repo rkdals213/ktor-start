@@ -6,7 +6,7 @@ import org.ktorm.database.Database
 import org.ktorm.logging.ConsoleLogger
 import org.ktorm.logging.LogLevel
 
-object KtOrmDatabaseConnection {
+object DatabaseConnection {
     private val config = HikariConfig().apply {
         println(Property["db.jdbcUrl"])
         jdbcUrl = Property["db.jdbcUrl"]
@@ -15,7 +15,7 @@ object KtOrmDatabaseConnection {
         password = Property["db.password"]
     }
 
-    private val datasource = HikariDataSource(config)
+    val datasource = HikariDataSource(config)
 
     val database = Database.connect(
         dataSource = datasource,

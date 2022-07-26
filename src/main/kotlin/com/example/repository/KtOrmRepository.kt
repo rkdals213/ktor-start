@@ -1,15 +1,15 @@
 package com.example.repository
 
-import com.example.config.KtOrmDatabaseConnection
-import com.example.domain.Department
-import com.example.domain.Employee
-import com.example.domain.departments
-import com.example.domain.employees
+import com.example.config.DatabaseConnection
+import com.example.domain.ktorm.Department
+import com.example.domain.ktorm.Employee
+import com.example.domain.ktorm.departments
+import com.example.domain.ktorm.employees
 import org.ktorm.dsl.eq
 import org.ktorm.entity.*
 
-object Repository {
-    private val database = KtOrmDatabaseConnection.database
+object KtOrmRepository {
+    private val database = DatabaseConnection.database
 
     fun findDepartmentById(id: Long): Department = database.departments.find { it.id eq id } ?: throw RuntimeException()
 

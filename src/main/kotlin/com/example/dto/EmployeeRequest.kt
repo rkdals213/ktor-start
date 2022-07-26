@@ -1,7 +1,7 @@
 package com.example.dto
 
-import com.example.domain.Department
-import com.example.domain.Employee
+import com.example.domain.ktorm.Department
+import com.example.domain.ktorm.Employee
 import kotlinx.datetime.LocalDateTime
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable

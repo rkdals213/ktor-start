@@ -1,6 +1,6 @@
 package com.example.dto
 
-import com.example.domain.Department
+import com.example.domain.ktorm.Department
 import kotlinx.serialization.Serializable
 
 @Serializable

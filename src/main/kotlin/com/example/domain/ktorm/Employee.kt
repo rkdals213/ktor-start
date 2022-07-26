@@ -1,4 +1,4 @@
-package com.example.domain
+package com.example.domain.ktorm
 
 import org.ktorm.database.Database
 import org.ktorm.entity.Entity
